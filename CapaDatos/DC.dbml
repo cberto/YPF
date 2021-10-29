@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TrabajoYpf" Class="DCDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\Servidor;Initial Catalog=TrabajoYpf;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="TrabajoYpfConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TipoProducto" Member="eTipoProductos">
+    <Type Name="eTipoProducto">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="TipoProducto_Producto" Member="eProductos" ThisKey="id" OtherKey="fkTipo" Type="eProducto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipoPago" Member="eTipoPagos">
+    <Type Name="eTipoPago">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="TipoPago_CargaCombustibleSocio" Member="eCargaCombustibleSocios" ThisKey="id" OtherKey="fkPago" Type="eCargaCombustibleSocio" />
+      <Association Name="TipoPago_CargaCombustible" Member="eCargaCombustibles" ThisKey="id" OtherKey="fkPago" Type="eCargaCombustible" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipoCombustible" Member="eTipoCombustibles">
+    <Type Name="eTipoCombustible">
+      <Column Name="nombre" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="TipoCombustible_Combustible" Member="eCombustibles" ThisKey="nombre" OtherKey="fkTipo" Type="eCombustible" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tarjeta" Member="eTarjetas">
+    <Type Name="eTarjeta">
+      <Column Name="numTarjeta" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="puntos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecVen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Tarjeta_Socio" Member="eSocios" ThisKey="numTarjeta" OtherKey="fkTarjeta" Type="eSocio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Socio" Member="eSocios">
+    <Type Name="eSocio">
+      <Column Name="numSocio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="apyn" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecnac" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dni" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fkLocalidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fkTarjeta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Socio_CargaCombustibleSocio" Member="eCargaCombustibleSocios" ThisKey="numSocio" OtherKey="fkSocio" Type="eCargaCombustibleSocio" />
+      <Association Name="Socio_Canje" Member="eCanjes" ThisKey="numSocio" OtherKey="fkSocio" Type="eCanje" />
+      <Association Name="Tarjeta_Socio" Member="eTarjeta" ThisKey="fkTarjeta" OtherKey="numTarjeta" Type="eTarjeta" IsForeignKey="true" />
+      <Association Name="Localidad_Socio" Member="eLocalidad" ThisKey="fkLocalidad" OtherKey="id" Type="eLocalidad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Producto" Member="eProductos">
+    <Type Name="eProducto">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="valor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="stock" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fkMarca" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fkTipo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Producto_Canje" Member="eCanjes" ThisKey="id" OtherKey="fkProducto" Type="eCanje" />
+      <Association Name="TipoProducto_Producto" Member="eTipoProducto" ThisKey="fkTipo" OtherKey="id" Type="eTipoProducto" IsForeignKey="true" />
+      <Association Name="Marca_Producto" Member="eMarca" ThisKey="fkMarca" OtherKey="id" Type="eMarca" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Marca" Member="eMarcas">
+    <Type Name="eMarca">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Marca_Producto" Member="eProductos" ThisKey="id" OtherKey="fkMarca" Type="eProducto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LugarRetiro" Member="eLugarRetiros">
+    <Type Name="eLugarRetiro">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="LugarRetiro_Canje" Member="eCanjes" ThisKey="id" OtherKey="fkLugar" Type="eCanje" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Localidad" Member="eLocalidads">
+    <Type Name="eLocalidad">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="fkCiudad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Localidad_Socio" Member="eSocios" ThisKey="id" OtherKey="fkLocalidad" Type="eSocio" />
+      <Association Name="Localidad_Empleado" Member="eEmpleados" ThisKey="id" OtherKey="fkLocalidad" Type="eEmpleado" />
+      <Association Name="Ciudad_Localidad" Member="eCiudad" ThisKey="fkCiudad" OtherKey="id" Type="eCiudad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Empleado" Member="eEmpleados">
+    <Type Name="eEmpleado">
+      <Column Name="dni" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="apyn" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecnac" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fkLocalidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Empleado_CargaCombustibleSocio" Member="eCargaCombustibleSocios" ThisKey="dni" OtherKey="fkEmpleado" Type="eCargaCombustibleSocio" />
+      <Association Name="Empleado_CargaCombustible" Member="eCargaCombustibles" ThisKey="dni" OtherKey="fkEmpleado" Type="eCargaCombustible" />
+      <Association Name="Localidad_Empleado" Member="eLocalidad" ThisKey="fkLocalidad" OtherKey="id" Type="eLocalidad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Combustible" Member="eCombustibles">
+    <Type Name="eCombustible">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="precioPorLitro" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="fkTipo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="Combustible_CargaCombustibleSocio" Member="eCargaCombustibleSocios" ThisKey="id" OtherKey="fkCombustible" Type="eCargaCombustibleSocio" />
+      <Association Name="Combustible_CargaCombustible" Member="eCargaCombustibles" ThisKey="id" OtherKey="fkCombustible" Type="eCargaCombustible" />
+      <Association Name="TipoCombustible_Combustible" Member="eTipoCombustible" ThisKey="fkTipo" OtherKey="nombre" Type="eTipoCombustible" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ciudad" Member="eCiudads">
+    <Type Name="eCiudad">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Ciudad_Localidad" Member="eLocalidads" ThisKey="id" OtherKey="fkCiudad" Type="eLocalidad" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CargaCombustibleSocio" Member="eCargaCombustibleSocios">
+    <Type Name="eCargaCombustibleSocio">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="precio" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="cantidad" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="puntos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fkCombustible" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fkPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fkEmpleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fkSocio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Combustible_CargaCombustibleSocio" Member="eCombustible" ThisKey="fkCombustible" OtherKey="id" Type="eCombustible" IsForeignKey="true" />
+      <Association Name="Empleado_CargaCombustibleSocio" Member="eEmpleado" ThisKey="fkEmpleado" OtherKey="dni" Type="eEmpleado" IsForeignKey="true" />
+      <Association Name="TipoPago_CargaCombustibleSocio" Member="eTipoPago" ThisKey="fkPago" OtherKey="id" Type="eTipoPago" IsForeignKey="true" />
+      <Association Name="Socio_CargaCombustibleSocio" Member="eSocio" ThisKey="fkSocio" OtherKey="numSocio" Type="eSocio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CargaCombustible" Member="eCargaCombustibles">
+    <Type Name="eCargaCombustible">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="precio" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="cantidad" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="fechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fkCombustible" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fkPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fkEmpleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Combustible_CargaCombustible" Member="eCombustible" ThisKey="fkCombustible" OtherKey="id" Type="eCombustible" IsForeignKey="true" />
+      <Association Name="Empleado_CargaCombustible" Member="eEmpleado" ThisKey="fkEmpleado" OtherKey="dni" Type="eEmpleado" IsForeignKey="true" />
+      <Association Name="TipoPago_CargaCombustible" Member="eTipoPago" ThisKey="fkPago" OtherKey="id" Type="eTipoPago" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Canje" Member="eCanjes">
+    <Type Name="eCanje">
+      <Column Name="numCanje" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="valor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fkSocio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fkProducto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fkLugar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LugarRetiro_Canje" Member="eLugarRetiro" ThisKey="fkLugar" OtherKey="id" Type="eLugarRetiro" IsForeignKey="true" />
+      <Association Name="Producto_Canje" Member="eProducto" ThisKey="fkProducto" OtherKey="id" Type="eProducto" IsForeignKey="true" />
+      <Association Name="Socio_Canje" Member="eSocio" ThisKey="fkSocio" OtherKey="numSocio" Type="eSocio" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

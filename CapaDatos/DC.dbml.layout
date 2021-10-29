@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15.5, 14.375" name="DC">
+  <DataContextMoniker Name="/DCDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d8812972-3227-4393-b3de-37f45babb19c" absoluteBounds="1.5, 1, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DCDataContext/eTipoProducto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b975231-83b1-4858-a314-c11469051800" absoluteBounds="1.5150000000000001, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5d32a29c-1006-4e67-afb6-9ccdb5176b19" absoluteBounds="7.625, 4.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DCDataContext/eTipoPago" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a4a92ae3-90bc-475c-b9d3-f46f400fc092" absoluteBounds="7.6400000000000006, 5.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aacf4e91-d57e-4556-8bbf-c966f048655b" absoluteBounds="11.125, 8.125, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DCDataContext/eTipoCombustible" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f4b4c21c-fc02-411f-83ec-609303bf8075" absoluteBounds="11.14, 8.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b1447997-ea92-4421-8dcd-268996e54d46" absoluteBounds="1.375, 12.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DCDataContext/eTarjeta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="44e0fc5d-47c9-494a-8ef0-619667fcb6d7" absoluteBounds="1.3900000000000001, 13.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ac7d6b92-87bd-4a49-be32-abe96f67bf3b" absoluteBounds="1.5, 10, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DCDataContext/eSocio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="699ced7a-a21a-41d3-a236-d44e92e06111" absoluteBounds="1.5149999999999997, 10.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.4375 : 12.75); (2.4375 : 11.9631982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCDataContext/eTarjeta/Tarjeta_Socio" />
+      <nodes>
+        <classShapeMoniker Id="b1447997-ea92-4421-8dcd-268996e54d46" />
+        <classShapeMoniker Id="ac7d6b92-87bd-4a49-be32-abe96f67bf3b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4e120bb6-3e25-427f-bad4-126572ed23b7" absoluteBounds="6.25, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DCDataContext/eProducto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8cdb6045-9140-41c8-8554-339d151362e2" absoluteBounds="6.265, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 1.69314697265625); (6.25 : 1.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCDataContext/eTipoProducto/TipoProducto_Producto" />
+      <nodes>
+        <classShapeMoniker Id="d8812972-3227-4393-b3de-37f45babb19c" />
+        <classShapeMoniker Id="4e120bb6-3e25-427f-bad4-126572ed23b7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="812c31d3-83d3-4e66-b11d-cc0b939ec53b" absoluteBounds="9.875, 1.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DCDataContext/eMarca" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d939a51-016e-4aad-bd33-3122358e9ff5" absoluteBounds="9.89, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.875 : 1.94314697265625); (8.25 : 1.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCDataContext/eMarca/Marca_Producto" />
+      <nodes>
+        <classShapeMoniker Id="812c31d3-83d3-4e66-b11d-cc0b939ec53b" />
+        <classShapeMoniker Id="4e120bb6-3e25-427f-bad4-126572ed23b7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b2d41c07-c06c-4378-8875-582e81097a91" absoluteBounds="3.625, 2.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DCDataContext/eLugarRetiro" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18b9e52b-e5f1-4212-9005-372d4eb83492" absoluteBounds="3.6400000000000006, 2.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e2924c61-abda-46c9-8752-8b9d3ed549b4" absoluteBounds="6.125, 10.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DCDataContext/eLocalidad" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26c06f88-f6b4-4571-b1bc-a1f5319155cb" absoluteBounds="6.1400000000000006, 10.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.125 : 10.9431469726562); (3.5 : 10.9431469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCDataContext/eLocalidad/Localidad_Socio" />
+      <nodes>
+        <classShapeMoniker Id="e2924c61-abda-46c9-8752-8b9d3ed549b4" />
+        <classShapeMoniker Id="ac7d6b92-87bd-4a49-be32-abe96f67bf3b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="eb802ce9-94a2-43c4-a60c-347491796fc5" absoluteBounds="8.875, 8.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DCDataContext/eEmpleado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c91823dc-5010-4885-a115-094ba72c0e04" absoluteBounds="8.89, 9.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.125 : 10.9431469726562); (9.875 : 10.9431469726562); (9.875 : 10.2035953776042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCDataContext/eLocalidad/Localidad_Empleado" />
+      <nodes>
+        <classShapeMoniker Id="e2924c61-abda-46c9-8752-8b9d3ed549b4" />
+        <classShapeMoniker Id="eb802ce9-94a2-43c4-a60c-347491796fc5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="45c04b1b-df6e-4f77-ae86-28b8fb91290e" absoluteBounds="12, 6, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DCDataContext/eCombustible" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ce749af6-6b9b-4840-ab97-c6ed06d87841" absoluteBounds="12.015, 6.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(12.5625 : 8.125); (12.5625 : 7.57859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCDataContext/eTipoCombustible/TipoCombustible_Combustible" />
+      <nodes>
+        <classShapeMoniker Id="aacf4e91-d57e-4556-8bbf-c966f048655b" />
+        <classShapeMoniker Id="45c04b1b-df6e-4f77-ae86-28b8fb91290e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5c3c51cb-7bd9-4c0e-832d-90407f8938aa" absoluteBounds="6.125, 12.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DCDataContext/eCiudad" />
+      <nestedChildShapes>
+        <elementListCompartment Id="edce9894-69eb-43db-9fed-4bf2302c368e" absoluteBounds="6.14, 12.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.125 : 12.375); (7.125 : 11.6362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCDataContext/eCiudad/Ciudad_Localidad" />
+      <nodes>
+        <classShapeMoniker Id="5c3c51cb-7bd9-4c0e-832d-90407f8938aa" />
+        <classShapeMoniker Id="e2924c61-abda-46c9-8752-8b9d3ed549b4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="be991bfe-1cff-40d4-a907-02558593a6e2" absoluteBounds="5.25, 5.75, 2, 2.5401025390625">
+      <DataClassMoniker Name="/DCDataContext/eCargaCombustibleSocio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1dd93c06-b510-4f01-898c-412e0d91175f" absoluteBounds="5.2650000000000006, 6.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(12 : 6.88869466145833); (7.25 : 6.88869466145833)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCDataContext/eCombustible/Combustible_CargaCombustibleSocio" />
+      <nodes>
+        <classShapeMoniker Id="45c04b1b-df6e-4f77-ae86-28b8fb91290e" />
+        <classShapeMoniker Id="be991bfe-1cff-40d4-a907-02558593a6e2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.875 : 9.41429768880208); (6.25 : 9.41429768880208); (6.25 : 8.2901025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCDataContext/eEmpleado/Empleado_CargaCombustibleSocio" />
+      <nodes>
+        <classShapeMoniker Id="eb802ce9-94a2-43c4-a60c-347491796fc5" />
+        <classShapeMoniker Id="be991bfe-1cff-40d4-a907-02558593a6e2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.625 : 5.94314697265625); (7.25 : 5.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCDataContext/eTipoPago/TipoPago_CargaCombustibleSocio" />
+      <nodes>
+        <classShapeMoniker Id="5d32a29c-1006-4e67-afb6-9ccdb5176b19" />
+        <classShapeMoniker Id="be991bfe-1cff-40d4-a907-02558593a6e2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.09375 : 10); (3.09375 : 6.71875); (5.25 : 6.71875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCDataContext/eSocio/Socio_CargaCombustibleSocio" />
+      <nodes>
+        <classShapeMoniker Id="ac7d6b92-87bd-4a49-be32-abe96f67bf3b" />
+        <classShapeMoniker Id="be991bfe-1cff-40d4-a907-02558593a6e2" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="6651a14e-10c7-4869-9b91-786383e6dac5" absoluteBounds="13.25, 9.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DCDataContext/eCargaCombustible" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e88bc0fe-f7a4-4bd2-8229-105694e51cfe" absoluteBounds="13.265, 9.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(13.625 : 7.57859537760417); (13.625 : 9.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCDataContext/eCombustible/Combustible_CargaCombustible" />
+      <nodes>
+        <classShapeMoniker Id="45c04b1b-df6e-4f77-ae86-28b8fb91290e" />
+        <classShapeMoniker Id="6651a14e-10c7-4869-9b91-786383e6dac5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 9.78929768880208); (13.25 : 9.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCDataContext/eEmpleado/Empleado_CargaCombustible" />
+      <nodes>
+        <classShapeMoniker Id="eb802ce9-94a2-43c4-a60c-347491796fc5" />
+        <classShapeMoniker Id="6651a14e-10c7-4869-9b91-786383e6dac5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.625 : 5.34375); (14.65625 : 5.34375); (14.65625 : 9.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCDataContext/eTipoPago/TipoPago_CargaCombustible" />
+      <nodes>
+        <classShapeMoniker Id="5d32a29c-1006-4e67-afb6-9ccdb5176b19" />
+        <classShapeMoniker Id="6651a14e-10c7-4869-9b91-786383e6dac5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5c08d54d-d780-4ea6-b5ef-3e2bdf302073" absoluteBounds="1.5, 3.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DCDataContext/eCanje" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9f99969f-bbc1-4a02-b74a-ce075047f4d0" absoluteBounds="1.5150000000000001, 4.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.625 : 3.1874995); (2.5 : 3.1874995); (2.5 : 3.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCDataContext/eLugarRetiro/LugarRetiro_Canje" />
+      <nodes>
+        <classShapeMoniker Id="b2d41c07-c06c-4378-8875-582e81097a91" />
+        <classShapeMoniker Id="5c08d54d-d780-4ea6-b5ef-3e2bdf302073" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.90625 : 2.8381982421875); (6.90625 : 4.31814697265625); (3.5 : 4.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCDataContext/eProducto/Producto_Canje" />
+      <nodes>
+        <classShapeMoniker Id="4e120bb6-3e25-427f-bad4-126572ed23b7" />
+        <classShapeMoniker Id="5c08d54d-d780-4ea6-b5ef-3e2bdf302073" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.234375 : 10); (2.234375 : 5.64589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCDataContext/eSocio/Socio_Canje" />
+      <nodes>
+        <classShapeMoniker Id="ac7d6b92-87bd-4a49-be32-abe96f67bf3b" />
+        <classShapeMoniker Id="5c08d54d-d780-4ea6-b5ef-3e2bdf302073" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

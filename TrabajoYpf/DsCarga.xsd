@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsCarga" targetNamespace="http://tempuri.org/DsCarga.xsd" xmlns:mstns="http://tempuri.org/DsCarga.xsd" xmlns="http://tempuri.org/DsCarga.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TrabajoYpfConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TrabajoYpfConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TrabajoYpf.Properties.Settings.GlobalReference.Default.TrabajoYpfConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TicketCargaTableAdapter" GeneratorDataComponentClassName="TicketCargaTableAdapter" Name="TicketCarga" UserDataComponentName="TicketCargaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TrabajoYpfConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CargaCombustible.id AS [Numero De Carga], CargaCombustible.precio AS Precio, CargaCombustible.cantidad AS Litros, 
+                         CargaCombustible.fechaHora AS [Fecha y hora], Combustible.nombre AS Combustible, TipoCombustible.nombre AS [Tipo del Combustible], 
+                         TipoPago.nombre AS [Forma de pago], Empleado.apyn AS Empleado
+FROM            CargaCombustible INNER JOIN
+                         Combustible ON CargaCombustible.fkCombustible = Combustible.id INNER JOIN
+                         TipoCombustible ON Combustible.fkTipo = TipoCombustible.nombre INNER JOIN
+                         Empleado ON CargaCombustible.fkEmpleado = Empleado.dni INNER JOIN
+                         TipoPago ON CargaCombustible.fkPago = TipoPago.id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Numero De Carga" DataSetColumn="Numero De Carga" />
+              <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
+              <Mapping SourceColumn="Litros" DataSetColumn="Litros" />
+              <Mapping SourceColumn="Fecha y hora" DataSetColumn="Fecha y hora" />
+              <Mapping SourceColumn="Combustible" DataSetColumn="Combustible" />
+              <Mapping SourceColumn="Tipo del Combustible" DataSetColumn="Tipo del Combustible" />
+              <Mapping SourceColumn="Forma de pago" DataSetColumn="Forma de pago" />
+              <Mapping SourceColumn="Empleado" DataSetColumn="Empleado" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsCarga" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsCarga" msprop:Generator_UserDSName="DsCarga">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TicketCarga" msprop:Generator_TableClassName="TicketCargaDataTable" msprop:Generator_TableVarName="tableTicketCarga" msprop:Generator_TablePropName="TicketCarga" msprop:Generator_RowDeletingName="TicketCargaRowDeleting" msprop:Generator_RowChangingName="TicketCargaRowChanging" msprop:Generator_RowEvHandlerName="TicketCargaRowChangeEventHandler" msprop:Generator_RowDeletedName="TicketCargaRowDeleted" msprop:Generator_UserTableName="TicketCarga" msprop:Generator_RowChangedName="TicketCargaRowChanged" msprop:Generator_RowEvArgName="TicketCargaRowChangeEvent" msprop:Generator_RowClassName="TicketCargaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Numero_x0020_De_x0020_Carga" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnNumero_De_Carga" msprop:Generator_ColumnPropNameInRow="Numero_De_Carga" msprop:Generator_ColumnPropNameInTable="Numero_De_CargaColumn" msprop:Generator_UserColumnName="Numero De Carga" type="xs:int" />
+              <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:double" minOccurs="0" />
+              <xs:element name="Litros" msprop:Generator_ColumnVarNameInTable="columnLitros" msprop:Generator_ColumnPropNameInRow="Litros" msprop:Generator_ColumnPropNameInTable="LitrosColumn" msprop:Generator_UserColumnName="Litros" type="xs:double" minOccurs="0" />
+              <xs:element name="Fecha_x0020_y_x0020_hora" msprop:Generator_ColumnVarNameInTable="columnFecha_y_hora" msprop:Generator_ColumnPropNameInRow="Fecha_y_hora" msprop:Generator_ColumnPropNameInTable="Fecha_y_horaColumn" msprop:Generator_UserColumnName="Fecha y hora" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Combustible" msprop:Generator_ColumnVarNameInTable="columnCombustible" msprop:Generator_ColumnPropNameInRow="Combustible" msprop:Generator_ColumnPropNameInTable="CombustibleColumn" msprop:Generator_UserColumnName="Combustible">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tipo_x0020_del_x0020_Combustible" msprop:Generator_ColumnVarNameInTable="columnTipo_del_Combustible" msprop:Generator_ColumnPropNameInRow="Tipo_del_Combustible" msprop:Generator_ColumnPropNameInTable="Tipo_del_CombustibleColumn" msprop:Generator_UserColumnName="Tipo del Combustible">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Forma_x0020_de_x0020_pago" msprop:Generator_ColumnVarNameInTable="columnForma_de_pago" msprop:Generator_ColumnPropNameInRow="Forma_de_pago" msprop:Generator_ColumnPropNameInTable="Forma_de_pagoColumn" msprop:Generator_UserColumnName="Forma de pago">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Empleado" msprop:Generator_ColumnVarNameInTable="columnEmpleado" msprop:Generator_ColumnPropNameInRow="Empleado" msprop:Generator_ColumnPropNameInTable="EmpleadoColumn" msprop:Generator_UserColumnName="Empleado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

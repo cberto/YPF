@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{63686499-982A-460A-AD8F-84C1F82DF7BD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrabajoYpf</RootNamespace>
+    <AssemblyName>TrabajoYpf</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DsCarga.cs">
+      <DependentUpon>DsCarga.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DsCarga.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsCarga.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormCanje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCanje.Designer.cs">
+      <DependentUpon>FormCanje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCargaCombustible.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCargaCombustible.Designer.cs">
+      <DependentUpon>FormCargaCombustible.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCargaCombustibleSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCargaCombustibleSocio.Designer.cs">
+      <DependentUpon>FormCargaCombustibleSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCiudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCiudad.Designer.cs">
+      <DependentUpon>FormCiudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCombustible.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCombustible.Designer.cs">
+      <DependentUpon>FormCombustible.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmpleado.Designer.cs">
+      <DependentUpon>FormEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLocalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLocalidad.Designer.cs">
+      <DependentUpon>FormLocalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLocalidadRetiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLocalidadRetiro.Designer.cs">
+      <DependentUpon>FormLocalidadRetiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMarca.Designer.cs">
+      <DependentUpon>FormMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProducto.Designer.cs">
+      <DependentUpon>FormProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSocio.Designer.cs">
+      <DependentUpon>FormSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTarjeta.Designer.cs">
+      <DependentUpon>FormTarjeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTipoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTipoProducto.Designer.cs">
+      <DependentUpon>FormTipoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCanje.resx">
+      <DependentUpon>FormCanje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCargaCombustible.resx">
+      <DependentUpon>FormCargaCombustible.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCargaCombustibleSocio.resx">
+      <DependentUpon>FormCargaCombustibleSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCiudad.resx">
+      <DependentUpon>FormCiudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCombustible.resx">
+      <DependentUpon>FormCombustible.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmpleado.resx">
+      <DependentUpon>FormEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLocalidad.resx">
+      <DependentUpon>FormLocalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLocalidadRetiro.resx">
+      <DependentUpon>FormLocalidadRetiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMarca.resx">
+      <DependentUpon>FormMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProducto.resx">
+      <DependentUpon>FormProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSocio.resx">
+      <DependentUpon>FormSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTarjeta.resx">
+      <DependentUpon>FormTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTipoProducto.resx">
+      <DependentUpon>FormTipoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="DsCarga.xsc">
+      <DependentUpon>DsCarga.xsd</DependentUpon>
+    </None>
+    <None Include="DsCarga.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsCarga.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DsCarga.xss">
+      <DependentUpon>DsCarga.xsd</DependentUpon>
+    </None>
+    <None Include="Dt.xsc">
+      <DependentUpon>Dt.xsd</DependentUpon>
+    </None>
+    <None Include="Dt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dt.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dt.xss">
+      <DependentUpon>Dt.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{1ba9a3b7-fb9a-458c-b22a-117a5ecf98c5}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\declined.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contract.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
